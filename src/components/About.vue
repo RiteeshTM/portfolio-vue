@@ -9,15 +9,14 @@
         <!-- LEFT TEXT -->
         <div class="about-text">
           <p class="lead">
-            I’m a CS student focusing on AI/ML, networking and embedded systems.
-            I enjoy hackathons (SIH), DeepRacer experiments, and building automation
-            agents in FastAPI.
+            I’m a Computer Science student specializing in machine learning, backend development, and automation systems. I enjoy building practical AI solutions, full-stack tools, and data-driven applications. My work spans ML modeling, FastAPI-based automation, exploratory data analysis, and backend engineering. I’ve also participated in national hackathons and ML competitions, consistently working on projects that merge software engineering with intelligent systems.
           </p>
 
           <ul class="info-list">
-            <li><strong>Languages:</strong> Python, C, Java</li>
-            <li><strong>Interests:</strong> Algorithms, ML, Embedded</li>
-            <li><strong>Currently:</strong> Preparing for exams & building a vehicle parking app</li>
+            <li><strong>Languages:</strong> Python, SQL, C, Java, JavaScript</li>
+            <li><strong>Skills:</strong> ML, DL, Data Analysis, Automation, FastAPI, Docker, Git, Linux, Generative AI</li>
+            <li><strong>Interests:</strong> ML, DL, Generative AI, Backend Systems, Algorithms, Agentic AI</li>
+            <li><strong>Currently:</strong> Working on automation tools, ML projects, and strengthening backend + AI engineering foundations</li>
           </ul>
         </div>
 
@@ -108,32 +107,41 @@ export default {
 }
 
 /* ---------------------------------------------------
-   PHOTO ON RIGHT
+   PHOTO ON RIGHT (ENLARGED, RESPONSIVE, NON-BREAKING)
 --------------------------------------------------- */
 .about-photo {
   display: flex;
   justify-content: center;
 }
 
+/* Increased size for larger visual weight while preserving layout */
 .photo-frame {
-  width: 240px;
-  height: 240px;
-  border-radius: 14px;
+  width: 360px;               /* larger size */
+  height: 360px;
+  border-radius: 18px;       /* slightly rounded */
   overflow: hidden;
   border: 1px solid rgba(255,255,255,0.03);
   background: rgba(255,255,255,0.01);
-  box-shadow: 0 18px 56px rgba(0,0,0,0.7);
-  transition: transform .25s ease;
+  box-shadow:
+    0 36px 80px rgba(0,0,0,0.72),
+    0 0 48px rgba(6,182,212,0.06);
+  transition: transform .32s cubic-bezier(.2,.9,.3,1), box-shadow .32s;
 }
 
+/* Make sure the image fills the frame nicely */
 .photo-frame img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
+/* Subtle hover lift with enhanced glow */
 .photo-frame:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:
+    0 48px 110px rgba(0,0,0,0.78),
+    0 0 80px rgba(6,182,212,0.10);
 }
 
 /* ---------------------------------------------------
@@ -162,9 +170,31 @@ export default {
 }
 
 /* ---------------------------------------------------
-   Small Screens
+   SMALL / MEDIUM SCREENS — avoid overflow & preserve balance
 --------------------------------------------------- */
+@media (max-width: 1100px) {
+  /* keep the image reasonably sized on medium screens */
+  .photo-frame {
+    width: 360px;
+    height: 360px;
+  }
+
+  /* text max width reduced so lines are comfortable next to the bigger image */
+  .lead { max-width: 56ch; }
+}
+
+@media (max-width: 900px) {
+  .about-layout { grid-template-columns: 1fr; }
+  .photo-frame {
+    width: 300px;
+    height: 300px;
+    border-radius: 14px;
+  }
+  .lead { max-width: 100%; }
+}
+
 @media (max-width: 520px) {
   .photo-frame { width: 180px; height: 180px; }
+  .lead { font-size: 1rem; line-height: 1.6; }
 }
 </style>

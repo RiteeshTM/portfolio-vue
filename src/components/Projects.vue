@@ -60,38 +60,39 @@ import { onMounted, ref } from 'vue'
 export default {
   name: 'Projects',
   setup() {
+    // Projects sourced from Resume_Riteesh.pdf (see source comment above). :contentReference[oaicite:1]{index=1}
     const projects = ref([
       {
-        kicker: 'ML & Robotics',
-        title: 'Optimized Drone Routing',
-        year: '2024',
-        desc: 'Path planning, heuristics and practical tuning for reliable route execution.',
-        tags: ['Python','Heuristics','ROS','Simulation'],
-        github: 'https://github.com/RiteeshTM/Optimized-Drone-Routing'
-      },
-      {
-        kicker: 'Web App',
-        title: 'Flask Vehicle Parking App',
+        kicker: 'Data Tool',
+        title: 'Auto-EDA Tool',
         year: '2025',
-        desc: 'Auth + role-based dashboards and parking allocation logic.',
-        tags: ['Flask','SQLAlchemy','Docker'],
-        github: 'https://github.com/RiteeshTM/Flask-Vehicle-Parking'
+        desc: 'Automated exploratory data analysis that generates self-contained HTML reports with summary statistics, distributions, correlations, and outlier analysis. (Dec 2025)',
+        tags: ['Python','Streamlit','EDA'],
+        github: ''
       },
       {
-        kicker: 'Embedded',
-        title: 'SIH Smart Water Monitor',
+        kicker: 'ML',
+        title: 'System Threat Forecaster',
         year: '2025',
-        desc: 'Arduino + ESP32 sensors to monitor water and soil parameters.',
-        tags: ['Arduino','ESP32','Sensors'],
-        github: 'https://github.com/RiteeshTM/SIH-Smart-Water'
+        desc: 'Built machine learning models to predict system threats from log data; evaluated Random Forest and XGBoost classifiers. (Mar–Apr 2025)',
+        tags: ['Python','Scikit-learn','Kaggle'],
+        github: ''
       },
       {
-        kicker: 'Systems',
-        title: 'AWS DeepRacer Tuning',
-        year: '2024',
-        desc: 'Reward function tuning and simulation experiments to prevent off-track events.',
-        tags: ['AWS','Simulation','RL'],
-        github: 'https://github.com/RiteeshTM/DeepRacer-Tuning'
+        kicker: 'Backend / Automation',
+        title: 'FastAPI Automation Agent',
+        year: '2025',
+        desc: 'Developed a REST API agent to automate file operations and script execution, packaged with Docker for consistent deployment. (May–Jun 2025)',
+        tags: ['Python','FastAPI','Docker'],
+        github: ''
+      },
+      {
+        kicker: 'Analytics',
+        title: 'Business Data Management',
+        year: '2025',
+        desc: 'Analyzed order data to identify regional demand and customer segments; performed segmentation to highlight high-value groups and actionable insights. (Jul–Nov 2025)',
+        tags: ['Python','Pandas','Scikit-learn','Excel'],
+        github: ''
       }
     ])
 

@@ -1,127 +1,170 @@
 <template>
   <section id="about" class="about-section">
-    <div class="container mx-auto px-6">
-      <div class="about-grid">
-        <!-- LEFT: Text -->
-        <div class="about-text">
-          <h2 class="text-2xl font-bold">About</h2>
+    <div class="container mx-auto px-6 relative z-10">
+      <header class="about-header reveal">
+        <h2 class="title">About</h2>
+      </header>
 
-          <p class="mt-4 lead">
+      <div class="about-layout reveal">
+        <!-- LEFT TEXT -->
+        <div class="about-text">
+          <p class="lead">
             I’m a CS student focusing on AI/ML, networking and embedded systems.
-            I enjoy hackathons (SIH), DeepRacer experiments and building automation
+            I enjoy hackathons (SIH), DeepRacer experiments, and building automation
             agents in FastAPI.
           </p>
 
-          <ul class="about-list mt-6">
-            <li>Languages: Python, C, Java</li>
-            <li>Interests: Algorithms, ML, Embedded</li>
-            <li>Currently: Preparing for exams & building a vehicle parking app</li>
+          <ul class="info-list">
+            <li><strong>Languages:</strong> Python, C, Java</li>
+            <li><strong>Interests:</strong> Algorithms, ML, Embedded</li>
+            <li><strong>Currently:</strong> Preparing for exams & building a vehicle parking app</li>
           </ul>
         </div>
 
-        <!-- RIGHT: Profile image -->
-        <div class="about-image-wrap">
-          <div class="profile-frame accent-outline">
-            <!-- keep the filename you used earlier -->
-            <img src="/src/assets/placeholder-photo.png" alt="Riteesh" />
+        <!-- RIGHT IMAGE -->
+        <aside class="about-photo">
+          <div class="photo-frame">
+            <img src="/src/assets/placeholder-photo.png" alt="Riteesh TM" />
           </div>
-        </div>
+        </aside>
       </div>
+
+      <!-- Optional neon divider (matches projects + education) -->
+      <div class="section-divider"></div>
     </div>
   </section>
 </template>
 
 <script>
 export default {
-  name: "About",
-};
+  name: "About"
+}
 </script>
 
 <style scoped>
-/* Section spacing tightened so About sits closer under the hero */
+/* ---------------------------------------------------
+   SECTION BASE (matches Education — open layout)
+--------------------------------------------------- */
 .about-section {
-  padding-top: 2.25rem;   /* reduced from big values */
-  padding-bottom: 3.5rem;
+  padding: 3.4rem 0 2.6rem;
   position: relative;
-  z-index: 10;
-  max-width: 100%;
-  overflow-x: hidden;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.00) 0%,
+    rgba(255,255,255,0.01) 100%
+  );
 }
 
-/* Grid: on desktop, text takes 2/3 and image 1/3 */
-.about-grid {
+/* ---------------------------------------------------
+   HEADER — clean, neon gradient text
+--------------------------------------------------- */
+.title {
+  font-size: 1.9rem;
+  font-weight: 800;
+  background: linear-gradient(90deg,#06B6D4,#8B5CF6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.about-header {
+  margin-bottom: 1.25rem;
+}
+
+/* ---------------------------------------------------
+   TWO COLUMN LAYOUT (no card)
+--------------------------------------------------- */
+.about-layout {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 2rem;
   align-items: center;
 }
-@media (min-width: 768px) {
-  .about-grid {
-    grid-template-columns: 2fr 1fr;
-    gap: 2.5rem;
+
+@media (min-width: 860px) {
+  .about-layout {
+    grid-template-columns: 1.2fr 0.9fr;
   }
 }
 
-/* Left column */
-.about-text .lead {
-  color: rgba(230,240,255,0.88);
+/* ---------------------------------------------------
+   LEFT TEXT
+--------------------------------------------------- */
+.lead {
+  color: rgba(230,240,255,0.92);
   font-size: 1.05rem;
-  line-height: 1.6;
-  max-width: 60ch;
+  line-height: 1.7;
+  max-width: 64ch;
 }
 
-/* List style tuned for dark background */
-.about-list {
-  margin-left: 1rem;
-  color: rgba(170,188,200,0.55);
+.info-list {
+  margin-top: 1rem;
+  padding-left: 1.1rem;
   list-style: disc;
-  line-height: 1.9;
-  margin-top: 0.6rem;
+  color: rgba(180,195,210,0.60);
+  line-height: 1.85;
 }
-.about-list li {
-  margin-bottom: 0.4rem;
+.info-list strong {
+  color: rgba(220,235,255,0.9);
 }
 
-/* Right column: profile frame smaller and more subtle */
-.about-image-wrap {
+/* ---------------------------------------------------
+   PHOTO ON RIGHT
+--------------------------------------------------- */
+.about-photo {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-/* Reuse card/profile styles but smaller for balance */
-.profile-frame {
-  width: 192px;
-  height: 192px;
-  border-radius: 12px;
+.photo-frame {
+  width: 240px;
+  height: 240px;
+  border-radius: 14px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.04);
-  box-shadow: 0 18px 56px rgba(0,0,0,0.75);
-  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.006));
-  transition: transform .28s ease, box-shadow .28s ease;
-}
-.profile-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  border: 1px solid rgba(255,255,255,0.03);
+  background: rgba(255,255,255,0.01);
+  box-shadow: 0 18px 56px rgba(0,0,0,0.7);
+  transition: transform .25s ease;
 }
 
-/* Accent outline (matching cyber theme) */
-.accent-outline {
-  box-shadow: 0 0 28px rgba(6,182,212,0.05), inset 0 0 40px rgba(139,92,246,0.02);
-  border: 1px solid rgba(6,182,212,0.06);
+.photo-frame img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
-/* subtle hover lift on profile */
-.profile-frame:hover {
+.photo-frame:hover {
   transform: translateY(-6px);
-  box-shadow: 0 28px 80px rgba(0,0,0,0.75), 0 0 24px rgba(6,182,212,0.03);
 }
 
-/* Small screens: reduce image size a bit */
-@media (max-width: 420px) {
-  .profile-frame { width: 140px; height: 140px; }
-  .about-text .lead { font-size: 0.98rem; }
+/* ---------------------------------------------------
+   CYBER DIVIDER (thin neon fade)
+--------------------------------------------------- */
+.section-divider {
+  height: 1px;
+  width: 100%;
+  margin-top: 3rem;
+  background: radial-gradient(circle, rgba(6,182,212,0.20), transparent 70%);
+  opacity: 0.25;
+}
+
+/* ---------------------------------------------------
+   Reveal Animation
+--------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: all .7s cubic-bezier(.2,.9,.3,1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------------------------------------------------
+   Small Screens
+--------------------------------------------------- */
+@media (max-width: 520px) {
+  .photo-frame { width: 180px; height: 180px; }
 }
 </style>

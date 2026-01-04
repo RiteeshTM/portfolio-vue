@@ -22,7 +22,7 @@
           </div>
 
           <div class="edu-desc">
-            <strong>CGPA:</strong> 8.97 / 10<br />
+            <strong>CGPA:</strong> 9.00 / 10<br />
             Relevant coursework: Algorithms, Data Structures, Operating Systems, Computer Networks, Database Systems.
           </div>
         </article>
@@ -40,7 +40,7 @@
           </div>
 
           <div class="edu-desc">
-            <strong>GPA:</strong> 8.16 / 10<br />
+            <strong>GPA:</strong> 8.20 / 10<br />
             Coursework: Machine Learning, Data Science, Statistics, Programming, Business Analytics.
           </div>
         </article>

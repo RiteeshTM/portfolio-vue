@@ -28,7 +28,7 @@
       <div class="cyber-panel reveal">
         <div class="panel-left">
           <h1 class="title">
-            Hey — I’m <span class="gradient-text">Riteesh</span>.
+            Hey, I'm <span class="gradient-text">Riteesh</span>.
           </h1>
 
           <p class="subtitle">
